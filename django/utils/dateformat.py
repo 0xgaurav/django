@@ -38,6 +38,10 @@ re_escaped = _lazy_re_compile(r"\\(.)")
 
 class Formatter:
     def format(self, formatstr):
+        """
+Format a datetime object into a string based on the given format string.
+This helper is used throughout Django’s templating and date utilities.
+"""
         pieces = []
         for i, piece in enumerate(re_formatchars.split(str(formatstr))):
             if i % 2:
